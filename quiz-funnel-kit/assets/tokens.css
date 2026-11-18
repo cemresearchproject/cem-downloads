@@ -1,0 +1,19 @@
+/* Every colour the quiz uses. The brand colour is picked by name in settings.php; each name's values are here.
+   --brand fills buttons and picked answers, --brand-soft is the hover tint, --brand-strong is links and the progress bar. */
+
+.colour-violet { --brand: #a99cff; --brand-soft: #efecff; --brand-strong: #5b48d6; }
+.colour-teal   { --brand: #6fd0c8; --brand-soft: #e3f6f4; --brand-strong: #0b7a74; }
+.colour-green  { --brand: #8bd49c; --brand-soft: #e6f6ea; --brand-strong: #23793d; }
+.colour-amber  { --brand: #f2c14e; --brand-soft: #fdf3dc; --brand-strong: #8a5a00; }
+.colour-red    { --brand: #f39a90; --brand-soft: #fdecea; --brand-strong: #b3362d; }
+.colour-slate  { --brand: #b4c0d0; --brand-soft: #eef1f5; --brand-strong: #3e4c5e; }
+
+:root {
+  --ink: #1d1b2a;
+  --ink-soft: #57536b;
+  --ink-on-brand: #14121f;
+  --error: #b3362d;
+  --paper: #ffffff;
+  --ground: #f7f7fa;
+  --border: #dcdbe5;
+}

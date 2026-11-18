@@ -1,0 +1,87 @@
+/* The quiz's look. Colours come from tokens.css. */
+
+:root {
+  --radius: 10px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font-family: var(--font); font-size: 17px; line-height: 1.5;
+  color: var(--ink); background: var(--ground);
+  min-height: 100vh; display: flex; flex-direction: column;
+}
+a { color: var(--brand-strong); }
+
+.top { padding: 18px 20px; background: var(--paper); border-bottom: 1px solid var(--border); }
+.top__brand { font-weight: 700; font-size: 20px; text-decoration: none; color: var(--brand-strong); }
+
+.page { flex: 1; width: 100%; max-width: 680px; margin: 0 auto; padding: 40px 20px 64px; }
+
+.foot {
+  display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: center;
+  padding: 20px; font-size: 14px; color: var(--ink-soft); border-top: 1px solid var(--border); background: var(--paper);
+}
+
+h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.15; margin: 0 0 12px; }
+
+.button {
+  display: inline-block; border: 0; border-radius: var(--radius); cursor: pointer;
+  padding: 14px 26px; font: inherit; font-weight: 600; text-decoration: none;
+  background: var(--brand); color: var(--ink-on-brand);
+}
+.button:hover, .button:focus-visible { background: color-mix(in srgb, var(--brand) 75%, var(--brand-strong)); }
+
+.landing { text-align: center; padding-top: 24px; }
+.landing__line { font-size: 19px; color: var(--ink-soft); margin: 0 0 28px; }
+.landing__note { font-size: 14px; color: var(--ink-soft); margin-top: 14px; }
+
+/* Progress */
+.progress { margin-bottom: 28px; }
+.progress__track { height: 8px; border-radius: 99px; background: var(--border); overflow: hidden; }
+.progress__fill { height: 100%; width: 0; background: var(--brand-strong); transition: width .4s ease; }
+.progress__steps { display: flex; justify-content: space-between; gap: 6px; list-style: none; margin: 8px 0 0; padding: 0; font-size: 13px; color: var(--ink-soft); }
+.progress__steps .is-current { color: var(--ink); font-weight: 600; }
+.progress__steps .is-done { color: var(--brand-strong); }
+
+/* Steps */
+.step { border: 0; margin: 0; padding: 0; min-width: 0; }
+.step[hidden] { display: none; }
+.step__question { font-size: clamp(22px, 4.5vw, 28px); font-weight: 700; line-height: 1.25; margin-bottom: 18px; padding: 0; }
+.step__sub { margin: -8px 0 18px; color: var(--ink-soft); }
+
+.choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.choice__input { position: absolute; opacity: 0; pointer-events: none; }
+.choice {
+  display: block; padding: 18px 20px; border-radius: var(--radius); cursor: pointer;
+  background: var(--paper); border: 1px solid var(--border); font-weight: 600;
+}
+.choice:hover { background: var(--brand-soft); }
+.choice__input:checked + .choice { background: var(--brand); border-color: var(--brand); color: var(--ink-on-brand); }
+.choice__input:focus-visible + .choice { outline: 3px solid var(--brand-strong); outline-offset: 2px; }
+
+.field { display: block; font-weight: 600; margin-bottom: 14px; }
+.field__optional { font-weight: 400; color: var(--ink-soft); }
+.field input {
+  display: block; width: 100%; margin-top: 6px; padding: 13px 14px; font: inherit;
+  border: 1px solid var(--border); border-radius: var(--radius); background: var(--paper); color: var(--ink);
+}
+.field input:focus { outline: 3px solid var(--brand); outline-offset: 0; }
+.trap { position: absolute; left: -9999px; }
+.error { color: var(--error); font-weight: 600; }
+.consent { font-size: 13px; color: var(--ink-soft); margin-top: 14px; }
+
+.nav { margin-top: 20px; }
+.nav__back { background: none; border: 0; padding: 6px 0; font: inherit; color: var(--ink-soft); cursor: pointer; text-decoration: underline; }
+
+/* After the quiz */
+.after__line { font-size: 19px; color: var(--ink-soft); margin: 0 0 28px; }
+.offers { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.offer { background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+.offer__name { font-size: 22px; margin: 0 0 6px; }
+.offer__line { margin: 0 0 16px; color: var(--ink-soft); }
+.offers--one .offer { text-align: center; padding: 32px 22px; }
+
+/* Privacy and terms */
+.legal h2 { font-size: 20px; margin-top: 28px; }
